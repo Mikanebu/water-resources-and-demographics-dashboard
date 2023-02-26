@@ -67,7 +67,7 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <h3 class="text-4xl font-normal leading-normal mt-0 mb-2 text-sky-800">
+      <h3 class="text-4xl font-normal leading-normal mt-0 mb-2 text-sky-800 ">
           Water resources and demographics dashboard - Republic of Kazakhstan
       </h3>
         <div className="grid grid-cols-2 gap-4">
@@ -77,9 +77,9 @@ export default function Home({data}) {
                 plugins: {
                 title: {
                   display: true,
-                  text: 'Water resources in cubic meters by basins',
+                  text: 'Water resources in m3 by basins',
                   font: {
-                    size: 18
+                    size: 14
                   }
                 },
                 legend: {
@@ -93,7 +93,7 @@ export default function Home({data}) {
                 labels: basin_labels,
                 datasets: [
                   {
-                    label: 'Water basins - water resources in cubic meters',
+                    label: 'Water resources:',
                     data: data.basins.data.slice(1).map(item => item[2]),
                     backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
@@ -117,21 +117,21 @@ export default function Home({data}) {
                       'rgb(75, 155, 207)',
                       'rgb(141, 200, 207)'
                     ],
-                    borderWidth: 1
+                    borderWidth: 2
                   }    
                 ]
               }}
             />
           </div>
           <div>
-            <Line
+            <Bar
               options= {{
                 plugins: {
                 title: {
                   display: true,
-                  text: 'Square in sq/km by basins',
+                  text: 'Square in km2 by basins',
                   font: {
-                    size: 18
+                    size: 14
                   }
                 },
                 legend: {
@@ -145,9 +145,31 @@ export default function Home({data}) {
                 labels: basin_labels,
                 datasets: [
                   {
-                    label: 'Water basins - Square (sq km)',
+                    label: 'Square (km2)',
                     data: data.basins.data.slice(1).map(item => item[1]),
-                    borderColor: 'rgba(255, 99, 132, 0.5)'
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(255, 159, 64, 0.2)',
+                      'rgba(255, 205, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(201, 203, 207, 0.2)',
+                      'rgba(75, 155, 207, 0.2)',
+                      'rgba(141, 200, 207, 0.2)'
+                    ],
+                    borderColor: [
+                      'rgb(255, 99, 132)',
+                      'rgb(255, 159, 64)',
+                      'rgb(255, 205, 86)',
+                      'rgb(75, 192, 192)',
+                      'rgb(54, 162, 235)',
+                      'rgb(153, 102, 255)',
+                      'rgb(201, 203, 207)',
+                      'rgb(75, 155, 207)',
+                      'rgb(141, 200, 207)'
+                    ],
+                    borderWidth: 2
                   }
                 ]
               }}
@@ -162,7 +184,7 @@ export default function Home({data}) {
                 display: true,
                 text: 'Share of the river in km',
                 font: {
-                  size: 18
+                  size: 14
                 }
               },
               },
@@ -179,7 +201,7 @@ export default function Home({data}) {
                   borderWidth: 1
                 },
                 {
-                  label: 'River length in KZ',
+                  label: 'River length',
                   data: data.rivers.data.slice(3).map(item => item[2]),
                   backgroundColor: 'rgb(75, 192, 192)',
                   borderWidth: 1
@@ -198,7 +220,7 @@ export default function Home({data}) {
                   display: true,
                   text: 'Average annual water consumption, m3/s',
                   font: {
-                    size: 18
+                    size: 14
                   }
                 },
                 legend: {
@@ -212,7 +234,7 @@ export default function Home({data}) {
                 labels: data.waterConsumption.data.slice(1).map(item => item[0]),
                 datasets: [
                   {
-                    label: 'Average_annual_water_consumption, m3/s',
+                    label: 'Average, m3/s',
                     data: data.waterConsumption.data.slice(1).map(item => item[3]),
                     backgroundColor: 'rgb(53, 162, 235)'
                   }    
@@ -228,7 +250,7 @@ export default function Home({data}) {
                   display: true,
                   text: 'Water and energy resources, Energy, million kWh/year',
                   font: {
-                    size: 18
+                    size: 14
                   }
                 },
                 legend: {
@@ -242,7 +264,7 @@ export default function Home({data}) {
                 labels: data.waterConsumption.data.slice(1).map(item => item[0]),
                 datasets: [
                   {
-                    label: 'Water and energy resources, Energy, million kWh/year',
+                    label: 'Energy, million kWh/year',
                     data: data.waterConsumption.data.slice(1).map(item => item[5]),
                     backgroundColor: 'rgb(75, 192, 192)'
                   }
@@ -260,7 +282,7 @@ export default function Home({data}) {
                 display: true,
                 text: 'Complex water pollution index (WPI)',
                 font: {
-                  size: 18
+                  size: 14
                 }
               },
               legend: {
@@ -274,7 +296,7 @@ export default function Home({data}) {
               labels: data.waterClassObjects.data.slice(1).map(item => item[0]),
               datasets: [
                 {
-                  label: 'Complex water pollution index (WPI)',
+                  label: 'wpi',
                   data: data.waterClassObjects.data.slice(1).map(item => item[4]),
                   backgroundColor: 'rgb(75, 192, 192)'
                 }
@@ -319,5 +341,6 @@ export async function getServerSideProps() {
     waterConsumption: Papa.parse(fullRes4),
     waterClassObjects: Papa.parse(fullRes5)
   }
+  
   return { props: { data } }
 }
