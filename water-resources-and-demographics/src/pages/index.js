@@ -176,15 +176,13 @@ export default function Home({data}) {
                   label: 'River lenght',
                   data: data.rivers.data.slice(3).map(item => item[1]),
                   backgroundColor: 'rgb(53, 162, 235)',
-                  borderWidth: 1,
-                  stack: 'Stack 0'
+                  borderWidth: 1
                 },
                 {
                   label: 'River length in KZ',
                   data: data.rivers.data.slice(3).map(item => item[2]),
                   backgroundColor: 'rgb(75, 192, 192)',
-                  borderWidth: 1,
-                  stack: 'Stack 0'
+                  borderWidth: 1
                 }      
               ]
             }}
