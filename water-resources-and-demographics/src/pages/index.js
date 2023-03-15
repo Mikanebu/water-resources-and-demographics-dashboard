@@ -195,13 +195,13 @@ export default function Home({data}) {
               labels: data.rivers.data.slice(3).map(item => item[0]),
               datasets: [
                 {
-                  label: 'River lenght',
+                  label: 'River length',
                   data: data.rivers.data.slice(3).map(item => item[1]),
                   backgroundColor: 'rgb(53, 162, 235)',
                   borderWidth: 1
                 },
                 {
-                  label: 'River length',
+                  label: 'River length in Kazakhstan',
                   data: data.rivers.data.slice(3).map(item => item[2]),
                   backgroundColor: 'rgb(75, 192, 192)',
                   borderWidth: 1
