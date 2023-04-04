@@ -201,7 +201,7 @@ export default function Home({data}) {
                   borderWidth: 1
                 },
                 {
-                  label: 'Длина реки на территории Казахстане',
+                  label: 'Длина реки на территории Казахстана',
                   data: data.rivers.data.slice(3).map(item => item[2]),
                   backgroundColor: 'rgb(75, 192, 192)',
                   borderWidth: 1
