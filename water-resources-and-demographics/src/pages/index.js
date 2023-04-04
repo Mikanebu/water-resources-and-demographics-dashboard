@@ -77,7 +77,7 @@ export default function Home({data}) {
                 plugins: {
                 title: {
                   display: true,
-                  text: 'Water resources in m3 by basins',
+                  text: 'Водные ресурсы в м3 по бассейнам',
                   font: {
                     size: 14
                   }
@@ -195,13 +195,13 @@ export default function Home({data}) {
               labels: data.rivers.data.slice(3).map(item => item[0]),
               datasets: [
                 {
-                  label: 'River length',
+                  label: 'Общая длина реки',
                   data: data.rivers.data.slice(3).map(item => item[1]),
                   backgroundColor: 'rgb(53, 162, 235)',
                   borderWidth: 1
                 },
                 {
-                  label: 'River length in Kazakhstan',
+                  label: 'Длина реки на территории Казахстане',
                   data: data.rivers.data.slice(3).map(item => item[2]),
                   backgroundColor: 'rgb(75, 192, 192)',
                   borderWidth: 1
