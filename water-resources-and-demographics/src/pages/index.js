@@ -68,7 +68,7 @@ export default function Home({data}) {
       </Head>
       <main>
       <h3 class="text-4xl font-normal leading-normal mt-0 mb-2 text-sky-800 ">
-          Water resources and demographics dashboard - Republic of Kazakhstan
+          Водные ресурсы - Республика Казахстан
       </h3>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -129,7 +129,7 @@ export default function Home({data}) {
                 plugins: {
                 title: {
                   display: true,
-                  text: 'Square in km2 by basins',
+                  text: 'Площадь в км2 по бассейнам',
                   font: {
                     size: 14
                   }
@@ -182,7 +182,7 @@ export default function Home({data}) {
               plugins: {
               title: {
                 display: true,
-                text: 'Share of the river in km',
+                text: 'Доля реки в км',
                 font: {
                   size: 14
                 }
@@ -218,7 +218,7 @@ export default function Home({data}) {
                 plugins: {
                 title: {
                   display: true,
-                  text: 'Average annual water consumption, m3/s',
+                  text: 'Среднегодовой расход воды, м3/с',
                   font: {
                     size: 14
                   }
@@ -248,7 +248,7 @@ export default function Home({data}) {
                 plugins: {
                 title: {
                   display: true,
-                  text: 'Water and energy resources, Energy, million kWh/year',
+                  text: 'Водно-энергетические ресурсы, Энергия, млн кВтч/год',
                   font: {
                     size: 14
                   }
@@ -280,7 +280,7 @@ export default function Home({data}) {
               plugins: {
               title: {
                 display: true,
-                text: 'Complex water pollution index (WPI)',
+                text: 'Комплексный индекс загрязнения воды (ИЗВ)',
                 font: {
                   size: 14
                 }
